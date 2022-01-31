@@ -9,8 +9,7 @@ const Signup = (props) => {
     })
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setCredentials({ ...credentials, [name]: value});
+        setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
 
     const handleSubmit = (e) => {
@@ -23,7 +22,12 @@ const Signup = (props) => {
             <h1>Signup</h1>
             <form onSubmit={handleSubmit} >
                 <label>Name:
-                <input type="text" name="name" value={credentials.name} onChange={handleChange} />
+                <input 
+                    type="text" 
+                    name="name" 
+                    value={credentials.name} 
+                    onChange={handleChange} 
+                />
                 </label>
 
                 <label>Username:
