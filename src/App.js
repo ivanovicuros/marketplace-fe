@@ -7,6 +7,7 @@ import Logout from './components/Logout';
 import ItemForm from './components/ItemForm';
 import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './components/Profile';
+import Styled from 'styled-components';
 
 import './App.css';
 
@@ -16,6 +17,7 @@ function App() {
     <Router>
       <header>
         <Link to='/' className='header-title'>AFRICAN MARKETPLACE</Link>
+
         <nav className='links'>
           <Link to='/login'>LOGIN</Link>
           <Link to='/signup'>SIGNUP</Link>
@@ -23,6 +25,7 @@ function App() {
           <Link to='/item-form'>ADD ITEM</Link>
           <Link to={'/profile'}>Profile</Link>
         </nav>
+
       </header>
       <Switch>
         <ProtectedRoute path='/logout' component={Logout}/>

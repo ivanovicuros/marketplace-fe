@@ -11,7 +11,7 @@ const person = {
 const Profile = () => {
 
     const [user, setUser] = useState({person})
-    const [button, setButton] = useState(false)
+    const [editing, setEditing] = useState(false)
     const [editUser, setEditUser] = useState({
         name:'',
         username:'',
@@ -19,12 +19,10 @@ const Profile = () => {
         location: '',
         password: ''
     })
-
-    // const { name, username, email, location, password } = user.person
     
 
-   const toggleEdit = () => {
-        setButton(true)
+    const toggleEdit = () => {
+        setEditing(true)
     }   
 
     const handleChange = e => {
@@ -39,10 +37,11 @@ const Profile = () => {
         setUser({
             ...user,
             person: {...editUser}})
+        setEditing(false)
     }
  
     const handleCancel = () => {
-        setButton(false)
+        setEditing(false)
     }
 
     return(
@@ -53,7 +52,7 @@ const Profile = () => {
             <button onClick={toggleEdit}>Edit</button>
         </div>
         <div>
-            { button && <form>
+            { editing && <form>
                         <label> Name:
                             <input
                             type='text'
