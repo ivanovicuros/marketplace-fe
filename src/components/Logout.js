@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Logout = (props) => {
+
+    const { push } = useHistory();
+
+    useEffect(() => {
+        localStorage.removeItem('token');
+        push('/');
+    }, []);
+
     return (
         <>
-            <h1>Logout</h1>
         </>
     )
 }
