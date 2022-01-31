@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import ItemForm from './components/ItemForm';
 import ProtectedRoute from './components/ProtectedRoute';
+import Profile from './components/Profile';
 
 import './App.css';
 
@@ -20,11 +21,13 @@ function App() {
           <Link to='/signup'>SIGNUP</Link>
           <Link to='/logout'>Logout</Link>
           <Link to='/item-form'>ADD ITEM</Link>
+          <Link to={'/profile'}>Profile</Link>
         </nav>
       </header>
       <Switch>
         <ProtectedRoute path='/logout' component={Logout}/>
         <ProtectedRoute path='/item-form' component={ItemForm}/>
+        <Route path='/profile' component={Profile} />
         <Route path='/login' component={Login}/>
         <Route path='/signup' component={Signup}/>
         <Route path='/' component={Home}/>
