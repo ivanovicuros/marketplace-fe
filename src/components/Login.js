@@ -15,7 +15,6 @@ const Login = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(user);
         localStorage.setItem('token', 'Signed in');
     }
 
