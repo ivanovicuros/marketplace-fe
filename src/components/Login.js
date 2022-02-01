@@ -24,7 +24,7 @@ const Login = () => {
         axios.post('https://marketplace-be-02.herokuapp.com/api/auth/login', user)
         .then(resp => {
             localStorage.setItem('token', resp.data.token)
-            history.push('/profile')
+            history.push(`/profile/${resp.data.currentUser.id}`)
         })
         .catch(err => {
             console.log(err)
