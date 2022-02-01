@@ -1,5 +1,20 @@
-import Styled from 'styled-components';
+import Styled, { createGlobalStyle } from 'styled-components';
 import banner from "../../images/banner.jpg";
+import background from '../../images/pic02.jpeg';
+
+export const GlobalStyle = createGlobalStyle`
+  html {
+      height: 100%;
+  }
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: no-repeat url(${background});
+      opacity: .9;
+      background-size: cover;
+      height: 100vh;
+      margin: 0;
+  }
+`
 
 export const Background = Styled.div`
   background: no-repeat url(${banner});
