@@ -6,6 +6,7 @@ export const Background = Styled.div`
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
+  letter-spacing: .3rem;
 `
 
 export const TopContent = Styled.div`
@@ -15,8 +16,7 @@ export const TopContent = Styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: helvetica, sans-serif;
-  letter-spacing: .3rem;
+  
 
   h1{
     color: white;
@@ -34,12 +34,12 @@ export const TopContent = Styled.div`
 `
 
 export const MainContent = Styled.div`
-  height: 40vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: blue;
   color: #2E3842;
 
 `
