@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GlobalStyle } from './constants/index';
-import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './constants/Form'
+import { GlobalStyle } from './styles/index';
+import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styles/Form'
 
 const Login = () => {
     const [user, setUser] = useState({

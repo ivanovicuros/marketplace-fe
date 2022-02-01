@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { GlobalStyle } from './constants/index';
-import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './constants/Form';
+import { GlobalStyle } from './styles/index';
+import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styles/Form';
 
 const Signup = (props) => {
     const [credentials, setCredentials] = useState({
