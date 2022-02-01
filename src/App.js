@@ -31,10 +31,9 @@ function App() {
 
           <Nav className='links'>
             <Link to='/login'>LOGIN</Link>
-            <Link to='/signup'>SIGNUP</Link>
-            <Link to='/logout'>LOGOUT</Link>
             <Link to='/item-form'>ADD ITEM</Link>
             <Link to='/profile'>PROFILE</Link>
+            <Link to='/logout'>LOGOUT</Link>
           </Nav>
         </Header>
 
