@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GlobalStyle } from './styles/index';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styles/Form';
+import axios from 'axios';
 
 const Signup = (props) => {
     const [credentials, setCredentials] = useState({
@@ -16,8 +17,15 @@ const Signup = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(credentials);
-        localStorage.setItem('token', 'Signed in');
+        // localStorage.setItem('token', 'Signed in');
+
+        axios.post('https://marketplace-be-02.herokuapp.com/api/auth/register', credentials)
+        .then(resp => {
+            console.log(resp)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
     return(
