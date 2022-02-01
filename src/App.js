@@ -6,7 +6,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import ItemForm from './components/ItemForm';
 import ProtectedRoute from './components/ProtectedRoute';
-import Profile from './components/Profile';
+import Profile from './components/profile/Profile';
 import About from './components/About';
 import Team from './components/Team';
 import Faq from './components/faq/Faq';
