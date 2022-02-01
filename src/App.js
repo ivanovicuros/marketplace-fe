@@ -7,24 +7,12 @@ import Logout from './components/Logout';
 import ItemForm from './components/ItemForm';
 import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './components/Profile';
+import About from './components/About';
 import Styled from 'styled-components';
+import { Header, Nav, Footer } from './components/constants';
 
-import './App.css';
-
-const Header = Styled.header`
-  position: absolute;
-  background-color: #2E3842;
-  width: 100%;
-  height: 7vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  .header-title{
-    width: 50%;
-    padding: 0 2%;
-  }
-
+const StyledApp = Styled.div`
+  margin: 0;
   a{
     color: white;
     font-size: 1.4rem;
@@ -33,38 +21,39 @@ const Header = Styled.header`
   }
 `
 
-const Nav = Styled.nav`
-  width: 50%;
-  display: flex;
-  justify-content: space-evenly;
-`
-
 function App() {
   
   return (
     <Router>
+      <StyledApp>
+        <Header>
+          <Link to='/' className='header-title'>AFRICAN MARKETPLACE</Link>
 
-      <Header>
-        <Link to='/' className='header-title'>AFRICAN MARKETPLACE</Link>
+          <Nav className='links'>
+            <Link to='/login'>LOGIN</Link>
+            <Link to='/signup'>SIGNUP</Link>
+            <Link to='/logout'>LOGOUT</Link>
+            <Link to='/item-form'>ADD ITEM</Link>
+            <Link to='/profile'>PROFILE</Link>
+          </Nav>
+        </Header>
 
-        <Nav className='links'>
-          <Link to='/login'>LOGIN</Link>
-          <Link to='/signup'>SIGNUP</Link>
-          <Link to='/logout'>LOGOUT</Link>
-          <Link to='/item-form'>ADD ITEM</Link>
-          <Link to='/profile'>PROFILE</Link>
-        </Nav>
+        <Switch>
+          <ProtectedRoute path='/logout' component={Logout}/>
+          <ProtectedRoute path='/item-form' component={ItemForm}/>
+          <Route path='/profile' component={Profile} />
+          <Route path='/login' component={Login}/>
+          <Route path='/signup' component={Signup}/>
+          <Route path='/about' component={About}/>
+          <Route path='/' component={Home}/>
+        </Switch>
 
-      </Header>
-
-      <Switch>
-        <ProtectedRoute path='/logout' component={Logout}/>
-        <ProtectedRoute path='/item-form' component={ItemForm}/>
-        <Route path='/profile' component={Profile} />
-        <Route path='/login' component={Login}/>
-        <Route path='/signup' component={Signup}/>
-        <Route path='/' component={Home}/>
-      </Switch>
+        <Footer>
+          <Link to='/about'>ABOUT US</Link>
+          <Link to='/team'>MEET THE TEAM</Link>
+          <Link to='/faq'>FAQ</Link>
+        </Footer>
+      </StyledApp>
     </Router>
   );
 }
