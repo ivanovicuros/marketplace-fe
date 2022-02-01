@@ -6,7 +6,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import ItemForm from './components/ItemForm';
 import ProtectedRoute from './components/ProtectedRoute';
-import Profile from './components/Profile';
+import Profile from './components/profile/Profile';
 import About from './components/About';
 import Team from './components/Team';
 import Faq from './components/faq/Faq';
@@ -34,7 +34,7 @@ function App() {
           <Nav className='links'>
             <Link to='/login'>LOGIN</Link>
             <Link to='/item-form'>ADD ITEM</Link>
-            <Link to='/profile'>PROFILE</Link>
+            <Link to='/profile/1'>PROFILE</Link>
             <Link to='/logout'>LOGOUT</Link>
           </Nav>
         </Header>
@@ -42,7 +42,7 @@ function App() {
         <Switch>
           <ProtectedRoute path='/logout' component={Logout}/>
           <ProtectedRoute path='/item-form' component={ItemForm}/>
-          <Route path='/profile' component={Profile} />
+          <Route path='/profile/:id' component={Profile} />
           <Route path='/login' component={Login}/>
           <Route path='/signup' component={Signup}/>
           <Route path='/about' component={About}/>
