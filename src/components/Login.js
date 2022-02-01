@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { GlobalStyle } from './styles/index';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styles/Form'
 import axios from 'axios';
+
 
 const Login = () => {
     const [user, setUser] = useState({
         username: '',
         password: ''
     })
+
+    const history = useHistory();
+
     const handleChange = e => {
         setUser({
             ...user,
@@ -19,10 +23,11 @@ const Login = () => {
         e.preventDefault();
         axios.post('https://marketplace-be-02.herokuapp.com/api/auth/login', user)
         .then(resp => {
-            console.log(resp)
+            localStorage.setItem('token', resp.data.token)
+            history.push('/profile')
         })
         .catch(err => {
-            console.log({err})
+            console.log(err)
         })
     };
 
