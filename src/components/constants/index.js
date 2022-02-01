@@ -9,6 +9,13 @@ export const Background = Styled.div`
   letter-spacing: .3rem;
 `
 
+export const FooterWrapper = Styled.div`
+  background: no-repeat url(${banner});
+  background-size: cover;
+  background-attachment: fixed;
+  letter-spacing: .3rem;
+`
+
 export const TopContent = Styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   height: 70vh;
@@ -34,13 +41,17 @@ export const TopContent = Styled.div`
 `
 
 export const MainContent = Styled.div`
-  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: blue;
+  background-color: white;
   color: #2E3842;
+  text-align: left;
+
+  h2, p{
+    width: 50%;
+  }
 
 `
 

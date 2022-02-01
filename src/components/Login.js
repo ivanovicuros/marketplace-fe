@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: Arial, Helvetica, sans-serif;
         background: no-repeat url(${background});
-        opacity: 0.9;
+        opacity: .9;
         background-size: cover;
         height: 100vh;
         margin: 0;
