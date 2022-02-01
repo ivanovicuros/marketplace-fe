@@ -8,7 +8,7 @@ const Logout = (props) => {
     useEffect(() => {
         localStorage.removeItem('token');
         push('/');
-    }, []);
+    }, [push]);
 
     return (
         <>

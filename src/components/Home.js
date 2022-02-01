@@ -1,10 +1,39 @@
 import React from 'react';
+import Styled from 'styled-components';
+
+import banner from "../images/banner.jpg";
+
+const HomeStyled = Styled.div`
+    background: no-repeat url(${banner});
+    background-size: cover;
+    height: 100vh;
+    font-family: helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+const MainTitle = Styled.h1`
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+`
+
+const SubText = Styled.div`
+    color: white;
+
+`
+
 
 const Home = (props) => {
     return (
-        <>
-            <h1>Home</h1>
-        </>
+        <HomeStyled>
+            <MainTitle>AFRICAN MARKETPLACE</MainTitle>
+            <SubText>SAUTI AFRICA EMPOWERS SMALL BUSINESS OWNERS, PARTICULARLY WOMEN, TO IMPROVE THEIR BUSINESS AND ECONOMIC OPPORTUNITIES TO GROW OUT OF POVERTY.</SubText>
+        </HomeStyled>
     );
 }
 

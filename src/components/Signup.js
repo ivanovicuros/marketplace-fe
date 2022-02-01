@@ -15,6 +15,7 @@ const Signup = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(credentials);
+        localStorage.setItem('token', 'Signed in');
     }
 
     return(
