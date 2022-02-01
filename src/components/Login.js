@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GlobalStyle } from './styles/index';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styles/Form'
+import axios from 'axios';
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -16,8 +17,15 @@ const Login = () => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        localStorage.setItem('token', 'Signed in');
-    }
+        axios.post('https://marketplace-be-02.herokuapp.com/api/auth/login', user)
+        .then(resp => {
+            console.log(resp)
+        })
+        .catch(err => {
+            console.log({err})
+        })
+    };
+
     return (
         <>
             <GlobalStyle form/>
