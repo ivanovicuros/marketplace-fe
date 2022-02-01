@@ -7,47 +7,18 @@ import Logout from './components/Logout';
 import ItemForm from './components/ItemForm';
 import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './components/Profile';
+import About from './components/About';
 import Styled from 'styled-components';
-
-import './App.css';
+import { Header, Nav, Footer } from './components/constants';
 
 const StyledApp = Styled.div`
+  margin: 0;
   a{
     color: white;
     font-size: 1.4rem;
     font-weight: bold;
     text-decoration: none;
   }
-`
-
-const Header = Styled.header`
-  position: absolute;
-  background-color: #2E3842;
-  width: 100%;
-  height: 6vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  .header-title{
-    width: 50%;
-    padding: 0 2%;
-  }
-`
-
-const Nav = Styled.nav`
-  width: 50%;
-  display: flex;
-  justify-content: space-evenly;
-`
-
-const Footer = Styled.footer`
-  height: 10vh;
-  background-color: #1D242AE6;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
 `
 
 function App() {
@@ -73,6 +44,7 @@ function App() {
           <Route path='/profile' component={Profile} />
           <Route path='/login' component={Login}/>
           <Route path='/signup' component={Signup}/>
+          <Route path='/about' component={About}/>
           <Route path='/' component={Home}/>
         </Switch>
 

@@ -1,17 +1,7 @@
 import React from 'react';
 import Styled from 'styled-components';
+import { Background } from './constants';
 import { Link } from 'react-router-dom';
-
-import banner from "../images/banner.jpg";
-
-const HomeStyled = Styled.div`
-    background: no-repeat url(${banner});
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
-    font-family: helvetica, sans-serif;
-    letter-spacing: .3rem;
-`
 
 const TopSection = Styled.div`
     background-color: rgba(0, 0, 0, 0.4);
@@ -20,6 +10,8 @@ const TopSection = Styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: helvetica, sans-serif;
+    letter-spacing: .3rem;
 
     a{
         margin-top: 4%;
@@ -52,14 +44,13 @@ const SubText = Styled.div`
 
 const Home = (props) => {
     return (
-        <HomeStyled>
+        <Background>
             <TopSection>
                 <MainTitle>AFRICAN MARKETPLACE</MainTitle>
                 <SubText>SAUTI AFRICA EMPOWERS SMALL BUSINESS OWNERS, PARTICULARLY WOMEN, TO IMPROVE THEIR BUSINESS AND ECONOMIC OPPORTUNITIES TO GROW OUT OF POVERTY.</SubText>
                 <Link to='/login'>LOGIN</Link>
             </TopSection>
-            
-        </HomeStyled>
+        </Background>
     );
 }
 
