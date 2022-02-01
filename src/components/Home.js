@@ -1,11 +1,11 @@
 import React from 'react';
 import Styled from 'styled-components';
 
-import banner from "../../images/banner.jpg";
+import banner from "../images/banner.jpg";
 
 const HomeStyled = Styled.div`
-    background-image: url(${banner});
-    background-color: black;
+    background: no-repeat url(${banner});
+    background-size: cover;
     height: 100vh;
     font-family: helvetica, sans-serif;
     display: flex;
@@ -22,12 +22,17 @@ const MainTitle = Styled.h1`
     font-weight: bold;
 `
 
+const SubText = Styled.div`
+    color: white;
+
+`
+
 
 const Home = (props) => {
     return (
         <HomeStyled>
             <MainTitle>AFRICAN MARKETPLACE</MainTitle>
-            <p>SAUTI AFRICA EMPOWERS SMALL BUSINESS OWNERS, PARTICULARLY WOMEN, TO IMPROVE THEIR BUSINESS AND ECONOMIC OPPORTUNITIES TO GROW OUT OF POVERTY.</p>
+            <SubText>SAUTI AFRICA EMPOWERS SMALL BUSINESS OWNERS, PARTICULARLY WOMEN, TO IMPROVE THEIR BUSINESS AND ECONOMIC OPPORTUNITIES TO GROW OUT OF POVERTY.</SubText>
         </HomeStyled>
     );
 }
