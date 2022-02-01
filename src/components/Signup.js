@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GlobalStyle } from './styles/index';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styles/Form';
+import background from '../images/pic02.jpeg';
 
 const Signup = (props) => {
     const [credentials, setCredentials] = useState({
@@ -22,7 +23,7 @@ const Signup = (props) => {
 
     return(
         <>
-            <GlobalStyle />
+            <GlobalStyle background={background}/>
             <StyledFormWrapper>
                 <StyledForm onSubmit={handleSubmit} >
                     <label>Name:

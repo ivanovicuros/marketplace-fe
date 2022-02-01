@@ -1,9 +1,12 @@
 import React from 'react';
-import { FooterWrapper, TopContent, MainContent } from './constants';
+import { GlobalStyle } from './styles';
+import { FooterWrapper, TopContent, MainContent } from './styles/Pages';
+import background from "../images/pic04.jpeg";
 
 const About = (props) => {
     return(
         <FooterWrapper>
+            <GlobalStyle background={background}/>
             <TopContent>
                 <h1>ABOUT US</h1>
                 <p>ALIQUAM UT EX UT INTERDUM DONEC AMET IMPERDIET ELEIFEND</p>
