@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled, { createGlobalStyle, css} from 'styled-components';
 import background from '../images/pic02.jpeg';
+
+
 const GlobalStyle = createGlobalStyle`
     html {
         height: 100%;
@@ -14,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
     }
 `
-const sharedStyles = css`
+ const sharedStyles = css`
     background-color: #eee;
     height: 40px;
     border-radius: 5px;
@@ -29,6 +32,12 @@ const StyledFormWrapper = styled.div`
     align-items: center;
     height: 100vh;
     padding: 0 20px;
+     #signup {
+        color:  #1CC766;
+        margin-left: 2vh;
+        font-size: 20px;
+    }
+    
 `
 
 const StyledForm = styled.form`
@@ -59,6 +68,7 @@ const StyledButton = styled.button`
     cursor: pointer;
     box-sizing: border-box;
 `
+
 const Login = () => {
     const [user, setUser] = useState({
         username: '',
@@ -96,6 +106,10 @@ const Login = () => {
                         />
                         </label>
                         <StyledButton>Log In</StyledButton>
+                        <p> Don't have an account ?
+                            <Link id='signup' to='/signup'>Sign Up</Link>
+                        </p>
+                        
                 </StyledForm>
             </StyledFormWrapper>
         </>
