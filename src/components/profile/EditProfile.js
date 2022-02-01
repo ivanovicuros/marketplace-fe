@@ -18,8 +18,9 @@ const FormButtons = styled.div`
 const initialState = {
     name:'',
     username:'',
-    location: '',
-    password: ''
+    password: '',
+    location: ''
+    
 }
 
 const EditProfile = (props) => {
@@ -39,10 +40,15 @@ const EditProfile = (props) => {
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleEdit(editUser);
+    }
+
     return(
         <>
             <StyledFormWrapper>
-                <StyledForm onSubmit={handleEdit}>
+                <StyledForm onSubmit={handleSubmit}>
                     <label> Name:
                         <StyledInput
                         type='text'

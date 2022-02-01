@@ -18,6 +18,27 @@ export const ProfileCard = styled.div`
     background-color: white;
     width: 80%;
     height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        font-size: 5rem;
+    }
+
+    h4{
+        font-size: 2rem;
+    }
+
+    button{
+        padding: 1% 4%;
+        border: none;
+        border-radius: .2em;
+        background-color: #1CC766;
+        color: white;
+        cursor: pointer;
+    }
 `
 
 export const EditBox = styled.div`
