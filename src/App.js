@@ -8,6 +8,8 @@ import ItemForm from './components/ItemForm';
 import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './components/Profile';
 import About from './components/About';
+import Team from './components/Team';
+import Faq from './components/faq/Faq';
 import Styled from 'styled-components';
 import { Header, Nav, Footer } from './components/styles';
 
@@ -44,6 +46,8 @@ function App() {
           <Route path='/login' component={Login}/>
           <Route path='/signup' component={Signup}/>
           <Route path='/about' component={About}/>
+          <Route path='/team' component={Team}/>
+          <Route path='/faq' component={Faq}/>
           <Route path='/' component={Home}/>
         </Switch>
 

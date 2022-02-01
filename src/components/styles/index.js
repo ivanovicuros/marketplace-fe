@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
       background: no-repeat url(${props => props.form ? formBackground : pageBackground});
       opacity: .9;
       background-size: cover;
-      height: 100vh;
+      background-attachment: fixed;
       margin: 0;
   }
 `
