@@ -15,7 +15,7 @@ const Header = Styled.header`
   position: absolute;
   background-color: #2E3842;
   width: 100%;
-  height: 7vh;
+  height: 6vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +37,11 @@ const Nav = Styled.nav`
   width: 50%;
   display: flex;
   justify-content: space-evenly;
+`
+
+const Footer = Styled.footer`
+  height: 10vh;
+  background-color: #1D242AE6;
 `
 
 function App() {
@@ -65,6 +70,10 @@ function App() {
         <Route path='/signup' component={Signup}/>
         <Route path='/' component={Home}/>
       </Switch>
+
+      <Footer>
+        <i className="fab fa-twitter"></i>
+      </Footer>
     </Router>
   );
 }
