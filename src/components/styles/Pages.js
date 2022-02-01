@@ -7,17 +7,20 @@ export const FooterWrapper = styled.div`
 
 export const TopContent = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
-  height: 70vh;
+  height: ${props => props.home ? '100vh': '70vh'};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+  letter-spacing: .3rem;
 
   h1{
     color: white;
     font-weight: 900;
     font-size: 2.5rem;
+    border-top: ${props => props.home ? '2px solid white': '0'};
+    border-bottom: ${props => props.home ? '2px solid white': '0'};
+    padding: ${props => props.home ? '1%': '0'};
   }
 
   p{
@@ -26,6 +29,16 @@ export const TopContent = styled.div`
     text-align: center;
     color: white;
     width: 50%;
+  }
+
+  a{
+    margin-top: 4%;
+    border: none;
+    border-radius: 3px;
+    background-color: #ED4933;
+    color: white;
+    text-decoration: none;
+    padding: 0.75% 3%;
   }
 `
 
