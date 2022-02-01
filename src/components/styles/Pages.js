@@ -51,7 +51,7 @@ export const MainContent = styled.div`
   color: #2E3842;
   text-align: left;
   padding: 4% 0;
-  h2, p{
+  *{
     width: 50%;
   }
 
