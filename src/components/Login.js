@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GlobalStyle } from './styles/index';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styles/Form'
-import background from '../images/pic02.jpeg';
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -21,7 +20,7 @@ const Login = () => {
     }
     return (
         <>
-            <GlobalStyle background={background}/>
+            <GlobalStyle form/>
             <StyledFormWrapper>
                 <StyledForm onSubmit={handleSubmit}>
                         <label> Username:

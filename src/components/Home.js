@@ -1,6 +1,6 @@
 import React from 'react';
 import Styled from 'styled-components';
-import { Background } from './constants';
+import { Background } from './styles';
 import { Link } from 'react-router-dom';
 
 const TopSection = Styled.div`
