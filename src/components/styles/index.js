@@ -1,5 +1,21 @@
-import Styled from 'styled-components';
+import Styled, { createGlobalStyle } from 'styled-components';
 import banner from "../../images/banner.jpg";
+import formBackground from '../../images/pic02.jpeg';
+import pageBackground from "../../images/pic04.jpeg";
+
+export const GlobalStyle = createGlobalStyle`
+  html {
+      height: 100%;
+  }
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: no-repeat url(${props => props.form ? formBackground : pageBackground});
+      opacity: .9;
+      background-size: cover;
+      height: 100vh;
+      margin: 0;
+  }
+`
 
 export const Background = Styled.div`
   background: no-repeat url(${banner});
@@ -7,41 +23,6 @@ export const Background = Styled.div`
   background-attachment: fixed;
   height: 100vh;
   letter-spacing: .3rem;
-`
-
-export const TopContent = Styled.div`
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-
-  h1{
-    color: white;
-    font-weight: 900;
-    font-size: 2.5rem;
-  }
-
-  p{
-    font-weight: 500;
-    font-size: 1.1rem;
-    text-align: center;
-    color: white;
-    width: 50%;
-  }
-`
-
-export const MainContent = Styled.div`
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: blue;
-  color: #2E3842;
-
 `
 
 export const Header = Styled.header`

@@ -9,7 +9,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './components/Profile';
 import About from './components/About';
 import Styled from 'styled-components';
-import { Header, Nav, Footer } from './components/constants';
+import { Header, Nav, Footer } from './components/styles';
 
 const StyledApp = Styled.div`
   margin: 0;
