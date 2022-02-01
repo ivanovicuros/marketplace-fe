@@ -28,7 +28,7 @@ const Profile = () => {
     }
 
     const handleEdit = (user) => {
-        axios.put(`htps://marketplace-be-02.herokuapp.com/api/users/${id}`)
+        axios.put(`https://marketplace-be-02.herokuapp.com/api/users/${id}`)
             .then(res => {
                 setUser({
                     ...user,
@@ -49,7 +49,7 @@ const Profile = () => {
                 </>}                
             </ProfileCard>
             <EditBox onClick={togglePopup} className={`${!editing ? 'hide' : ''}`}>
-                <EditProfile toggleEdit={toggleEdit} handleEdit={handleEdit} onClick={() => {}}/>
+                <EditProfile toggleEdit={toggleEdit} handleEdit={handleEdit} onClick={() => {}} editing={editing}/>
             </EditBox>
         </ProfileWrapper>
     )

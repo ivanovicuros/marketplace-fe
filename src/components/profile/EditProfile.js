@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from '../styles/Form';
 import styled from 'styled-components';
 
@@ -15,17 +15,22 @@ const FormButtons = styled.div`
     }
 `
 
+const initialState = {
+    name:'',
+    username:'',
+    location: '',
+    password: ''
+}
+
 const EditProfile = (props) => {
 
-    const { handleEdit, toggleEdit } = props;
+    const { handleEdit, toggleEdit, editing } = props;
 
-    const [editUser, setEditUser] = useState({
-        name:'',
-        username:'',
-        email:'',
-        location: '',
-        password: ''
-    });
+    const [editUser, setEditUser] = useState(initialState);
+
+    useEffect(() => {
+        setEditUser(initialState);
+    }, [editing])
 
     const handleChange = e => {
         setEditUser({
