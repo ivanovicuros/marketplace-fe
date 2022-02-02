@@ -54,3 +54,7 @@ export const StyledButton = styled.button`
     cursor: pointer;
     box-sizing: border-box;
 `
+
+export const StyledImage = styled.img`
+    max-height: 30vh;
+`
