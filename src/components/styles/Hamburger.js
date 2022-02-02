@@ -7,6 +7,10 @@ export const HamburgerWrapper = styled.div`
     background-color: rgba(33, 178, 166, 0.1);
     display: flex;
     justify-content: flex-end;
+
+    .hide{
+        display: none;
+    }
 `
 
 export const StyledMenu = styled.div`
@@ -25,10 +29,8 @@ export const StyledMenu = styled.div`
 
     i{
         color: white;
-        text-align: right;
         font-size: 1.6rem;
         margin-top: 5%;
-        width: 90%;
         cursor: pointer;
     }
 `
@@ -38,4 +40,10 @@ export const StyledLinks = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+`
+
+export const IconHolder = styled.div`
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
 `

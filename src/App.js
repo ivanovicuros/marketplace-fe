@@ -30,9 +30,6 @@ function App() {
 
   const handleHamburger = () => {
     setMenuOpen(!menuOpen);
-    setTimeout(function(){
-      setMenuOpen(menuOpen)
-    }, 30000);
   }
   
   return (
@@ -51,7 +48,7 @@ function App() {
             </StyledNav>
           }
         </StyledHeader>
-        {menuOpen && <HamburgerLinks handleHamburger={handleHamburger} />}
+        {menuOpen && <HamburgerLinks handleHamburger={handleHamburger} menuOpen={menuOpen}/>}
         <Switch>
           <ProtectedRoute path='/logout' component={Logout}/>
           <ProtectedRoute path='/item-form' component={ItemForm}/>
