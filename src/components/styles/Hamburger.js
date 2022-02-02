@@ -11,6 +11,11 @@ export const HamburgerWrapper = styled.div`
     .hide{
         display: none;
     }
+
+    .close-area{
+        width: 70%;
+        height: 100vh;
+    }
 `
 
 export const StyledMenu = styled.div`
@@ -40,10 +45,4 @@ export const StyledLinks = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-`
-
-export const IconHolder = styled.div`
-    width: 90%;
-    display: flex;
-    justify-content: flex-end;
 `

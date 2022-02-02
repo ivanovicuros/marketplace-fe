@@ -1,18 +1,20 @@
 import React from 'react';
-import { HamburgerWrapper, StyledMenu, StyledLinks, IconHolder } from './styles/Hamburger';
+import { HamburgerWrapper, StyledMenu, StyledLinks } from './styles/Hamburger';
+import { IconHolder } from  './styles';
 import { Link } from 'react-router-dom';
 
 const HamburgerLinks = (props) => {
     const { handleHamburger, menuOpen } = props;
 
     const handleHamburgerOutside = (e) => {
-        if(e.target.className === 'sc-fotOHu hEOlRV'){
+        if(e.target.className === 'close-area'){
             handleHamburger();
         }
     }
 
     return(
         <HamburgerWrapper onMouseDown={handleHamburgerOutside}>
+            <div className='close-area' />
             <StyledMenu>
                 <IconHolder>
                     <i className="fas fa-times" onClick={handleHamburger}></i>
