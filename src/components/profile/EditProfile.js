@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from '../styles/Form';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const FormButtons = styled.div`
     display: flex;
@@ -20,18 +21,20 @@ const initialState = {
     username:'',
     password: '',
     location: ''
-    
 }
 
 const EditProfile = (props) => {
 
-    const { handleEdit, toggleEdit, editing } = props;
+    const { handleEdit, toggleEdit, id } = props;
 
     const [editUser, setEditUser] = useState(initialState);
 
     useEffect(() => {
-        setEditUser(initialState);
-    }, [editing])
+        axios.get(`https://marketplace-be-02.herokuapp.com/api/users/${id}`)
+            .then(resp => {
+                setEditUser({...editUser, ...resp.data});
+            }).catch(err => console.error(err));
+    }, [])
 
     const handleChange = e => {
         setEditUser({

@@ -26,6 +26,7 @@ export const Background = Styled.div`
 `
 
 export const Header = Styled.header`
+  opacity: .9;
   position: absolute;
   background-color: #2E3842;
   width: 100%;
@@ -47,6 +48,7 @@ export const Nav = Styled.nav`
 `
 
 export const Footer = Styled.footer`
+
   height: 10vh;
   background-color: #1D242AE6;
   color: white;
