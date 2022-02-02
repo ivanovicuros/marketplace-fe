@@ -8,7 +8,7 @@ const HamburgerLinks = (props) => {
     return(
         <HamburgerWrapper>
             <StyledMenu>
-                <i class="fas fa-times" onClick={handleHamburger}></i>
+                <i className="fas fa-times" onClick={handleHamburger}></i>
                 <StyledLinks>
                     <Link to='/login'>LOGIN</Link>
                     <Link to='/item-form'>ADD ITEM</Link>

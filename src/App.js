@@ -32,7 +32,7 @@ function App() {
     setMenuOpen(!menuOpen);
     setTimeout(function(){
       setMenuOpen(menuOpen)
-    }, 3000);
+    }, 30000);
   }
   
   return (
