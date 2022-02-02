@@ -24,7 +24,8 @@ const Login = () => {
         axios.post('https://marketplace-be-02.herokuapp.com/api/auth/login', user)
         .then(resp => {
             console.log(resp)
-            localStorage.setItem('token', resp.data.token)
+            localStorage.setItem('token', resp.data.token);
+            localStorage.setItem('useHamburger', 'true');
             history.push(`/profile/${resp.data.currentUser.id}`)
         })
         .catch(err => {

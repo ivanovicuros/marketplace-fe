@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import Home from './components/Home';
 import Signup from './components/Signup';
@@ -11,7 +11,8 @@ import About from './components/About';
 import Team from './components/Team';
 import Faq from './components/faq/Faq';
 import Styled from 'styled-components';
-import { Header, Nav, Footer } from './components/styles';
+import HamburgerLinks from './components/HamburgerLinks';
+import { StyledHeader, StyledNav, StyledFooter } from './components/styles';
 
 const StyledApp = Styled.div`
   margin: 0;
@@ -24,21 +25,30 @@ const StyledApp = Styled.div`
 `
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(true);
+  const useHamburger = localStorage.getItem('useHamburger');
+
+  const handleHamburger = () => {
+    setMenuOpen(!menuOpen);
+  }
   
   return (
     <Router>
       <StyledApp>
-        <Header>
+        <StyledHeader>
           <Link to='/' className='header-title'>AFRICAN MARKETPLACE</Link>
 
-          <Nav className='links'>
-            <Link to='/login'>LOGIN</Link>
-            <Link to='/item-form'>ADD ITEM</Link>
-            <Link to='/profile/1'>PROFILE</Link>
-            <Link to='/logout'>LOGOUT</Link>
-          </Nav>
-        </Header>
-
+          {useHamburger ?
+            <i className="fas fa-bars" onClick={handleHamburger}></i>:
+            <StyledNav className='links'>
+              <Link to='/login'>LOGIN</Link>
+              <Link to='/item-form'>ADD ITEM</Link>
+              <Link to='/profile/1'>PROFILE</Link>
+              <Link to='/logout'>LOGOUT</Link>
+            </StyledNav>
+          }
+        </StyledHeader>
+        {menuOpen && <HamburgerLinks handleHamburger={handleHamburger} />}
         <Switch>
           <ProtectedRoute path='/logout' component={Logout}/>
           <ProtectedRoute path='/item-form' component={ItemForm}/>
@@ -51,11 +61,11 @@ function App() {
           <Route path='/' component={Home}/>
         </Switch>
 
-        <Footer>
+        <StyledFooter>
           <Link to='/about'>ABOUT US</Link>
           <Link to='/team'>MEET THE TEAM</Link>
           <Link to='/faq'>FAQ</Link>
-        </Footer>
+        </StyledFooter>
       </StyledApp>
     </Router>
   );
