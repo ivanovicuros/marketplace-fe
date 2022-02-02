@@ -25,11 +25,14 @@ const StyledApp = Styled.div`
 `
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const useHamburger = localStorage.getItem('useHamburger');
 
   const handleHamburger = () => {
     setMenuOpen(!menuOpen);
+    setTimeout(function(){
+      setMenuOpen(menuOpen)
+    }, 3000);
   }
   
   return (
