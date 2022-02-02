@@ -65,3 +65,9 @@ export const StyledFooter = Styled.footer`
   align-items: center;
   justify-content: space-evenly;
 `
+
+export const IconHolder = Styled.div`
+    width: ${props => props.home ? '50%' : '90%'};
+    display: flex;
+    justify-content: flex-end;
+`
