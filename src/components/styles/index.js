@@ -25,9 +25,9 @@ export const Background = Styled.div`
   letter-spacing: .3rem;
 `
 
-export const Header = Styled.header`
+export const StyledHeader = Styled.header`
   opacity: .9;
-  position: absolute;
+  position: fixed;
   background-color: #2E3842;
   width: 100%;
   height: 6vh;
@@ -39,15 +39,24 @@ export const Header = Styled.header`
     width: 50%;
     padding: 0 2%;
   }
+
+  i{
+    width: 50%;
+    color: white;
+    font-size: 2rem;
+    text-align: right;
+    padding-right: 2%;
+    cursor: pointer;
+  }
 `
 
-export const Nav = Styled.nav`
+export const StyledNav = Styled.nav`
   width: 50%;
   display: flex;
   justify-content: space-evenly;
 `
 
-export const Footer = Styled.footer`
+export const StyledFooter = Styled.footer`
 
   height: 10vh;
   background-color: #1D242AE6;
