@@ -51,7 +51,7 @@ const Profile = () => {
                     <button onClick={toggleEdit}>Edit</button>
                 </>}                
             </ProfileCard>
-            <EditBox onClick={togglePopup} className={`${!editing ? 'hide' : ''}`}>
+            <EditBox onMouseDown={togglePopup} className={`${!editing && 'hide'}`}>
                 <EditProfile toggleEdit={toggleEdit} handleEdit={handleEdit} id={id}/>
             </EditBox>
         </ProfileWrapper>

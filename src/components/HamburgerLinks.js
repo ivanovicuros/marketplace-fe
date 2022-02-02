@@ -1,14 +1,22 @@
 import React from 'react';
-import { HamburgerWrapper, StyledMenu, StyledLinks } from './styles/Hamburger';
+import { HamburgerWrapper, StyledMenu, StyledLinks, IconHolder } from './styles/Hamburger';
 import { Link } from 'react-router-dom';
 
 const HamburgerLinks = (props) => {
-    const { handleHamburger } = props;
+    const { handleHamburger, menuOpen } = props;
+
+    const handleHamburgerOutside = (e) => {
+        if(e.target.className === 'sc-fotOHu hEOlRV'){
+            handleHamburger();
+        }
+    }
 
     return(
-        <HamburgerWrapper>
+        <HamburgerWrapper onMouseDown={handleHamburgerOutside}>
             <StyledMenu>
-                <i class="fas fa-times" onClick={handleHamburger}></i>
+                <IconHolder>
+                    <i className="fas fa-times" onClick={handleHamburger}></i>
+                </IconHolder>
                 <StyledLinks>
                     <Link to='/login'>LOGIN</Link>
                     <Link to='/item-form'>ADD ITEM</Link>
