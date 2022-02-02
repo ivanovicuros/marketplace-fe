@@ -21,6 +21,7 @@ const HamburgerLinks = (props) => {
                     <Link to='/login'>LOGIN</Link>
                     <Link to='/item-form'>ADD ITEM</Link>
                     <Link to='/profile/1'>PROFILE</Link>
+                    <Link to='/marketplace'>MARKETPLACE</Link>
                     <Link to='/logout'>LOGOUT</Link>
                 </StyledLinks>
             </StyledMenu>

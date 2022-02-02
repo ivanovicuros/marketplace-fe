@@ -8,6 +8,7 @@ import ItemForm from './components/ItemForm';
 import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './components/profile/Profile';
 import About from './components/About';
+import Marketplace from './components/Marketplace';
 import Team from './components/Team';
 import Faq from './components/faq/Faq';
 import Styled from 'styled-components';
@@ -43,6 +44,7 @@ function App() {
             <StyledNav className='links'>
               <Link to='/login'>LOGIN</Link>
               <Link to='/item-form'>ADD ITEM</Link>
+              <Link to='/marketplace'>MARKETPLACE</Link>
               <Link to='/profile/1'>PROFILE</Link>
               <Link to='/logout'>LOGOUT</Link>
             </StyledNav>
@@ -55,6 +57,7 @@ function App() {
           <Route path='/profile/:id' component={Profile} />
           <Route path='/login' component={Login}/>
           <Route path='/signup' component={Signup}/>
+          <Route path='/marketplace' component={Marketplace} />
           <Route path='/about' component={About}/>
           <Route path='/team' component={Team}/>
           <Route path='/faq' component={Faq}/>
