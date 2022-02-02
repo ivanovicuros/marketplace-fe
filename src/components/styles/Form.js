@@ -31,6 +31,9 @@ export const StyledForm = styled.form`
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,4);
+    p {
+        color:red;
+    }
 `
 
 export const StyledInput = styled.input`

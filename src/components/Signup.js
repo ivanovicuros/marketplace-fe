@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { GlobalStyle } from './styles/index';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styles/Form';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { errorMsg } from '../actions';
 
 const Signup = (props) => {
     const [credentials, setCredentials] = useState({
@@ -17,15 +19,15 @@ const Signup = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // localStorage.setItem('token', 'Signed in');
-
-        axios.post('https://marketplace-be-02.herokuapp.com/api/auth/register', credentials)
+        if(credentials.name === '' || credentials.username === '' || credentials.password === '' || credentials.location === '')
+        props.dispatch(errorMsg('All Fields are required'))
+        else {axios.post('https://marketplace-be-02.herokuapp.com/api/auth/register', credentials)
         .then(resp => {
             console.log(resp)
         })
         .catch(err => {
             console.log(err)
-        })
+        })}
     }
 
     return(
@@ -55,10 +57,19 @@ const Signup = (props) => {
                     </label>
 
                     <StyledButton>Submit</StyledButton>
+                    {
+                        props.errorMsg && <p>Error: {props.errorMsg}</p>
+                    }
                 </StyledForm>
             </StyledFormWrapper>
         </>
     )
 }
 
-export default Signup;
+const mapStateToProps = state => {
+    return {
+        errorMsg: state.errorMsg 
+    }
+}
+
+export default connect(mapStateToProps)(Signup);
