@@ -12,7 +12,7 @@ import Team from './components/Team';
 import Faq from './components/faq/Faq';
 import Styled from 'styled-components';
 import HamburgerLinks from './components/HamburgerLinks';
-import { StyledHeader, StyledNav, StyledFooter } from './components/styles';
+import { StyledHeader, StyledFooter, IconHolder} from './components/styles';
 
 const StyledApp = Styled.div`
   margin: 0;
@@ -37,18 +37,11 @@ function App() {
       <StyledApp>
         <StyledHeader>
           <Link to='/' className='header-title'>AFRICAN MARKETPLACE</Link>
-
-          {useHamburger ?
-            <i className="fas fa-bars" onClick={handleHamburger}></i>:
-            <StyledNav className='links'>
-              <Link to='/login'>LOGIN</Link>
-              <Link to='/item-form'>ADD ITEM</Link>
-              <Link to='/profile/1'>PROFILE</Link>
-              <Link to='/logout'>LOGOUT</Link>
-            </StyledNav>
-          }
+          <IconHolder>
+              <i className="fas fa-bars" onClick={handleHamburger}></i>:
+          </IconHolder>
         </StyledHeader>
-        {menuOpen && <HamburgerLinks handleHamburger={handleHamburger} menuOpen={menuOpen}/>}
+        {menuOpen && <HamburgerLinks handleHamburger={handleHamburger} />}
         <Switch>
           <ProtectedRoute path='/logout' component={Logout}/>
           <ProtectedRoute path='/item-form' component={ItemForm}/>

@@ -4,7 +4,7 @@ import { IconHolder } from  './styles';
 import { Link } from 'react-router-dom';
 
 const HamburgerLinks = (props) => {
-    const { handleHamburger, menuOpen } = props;
+    const { handleHamburger } = props;
 
     const handleHamburgerOutside = (e) => {
         if(e.target.className === 'close-area'){

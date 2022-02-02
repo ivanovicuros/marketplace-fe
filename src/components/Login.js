@@ -25,7 +25,6 @@ const Login = () => {
         .then(resp => {
             console.log(resp)
             localStorage.setItem('token', resp.data.token);
-            localStorage.setItem('useHamburger', 'true');
             history.push(`/profile/${resp.data.currentUser.id}`)
         })
         .catch(err => {
