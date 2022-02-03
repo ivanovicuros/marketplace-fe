@@ -14,7 +14,8 @@ export const StyledFormWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: ${props => props.edit ? '75vh' : '100vh'};
+    width: ${props => props.edit && '35%'};
     padding: 0 20px;
     #signup {
         color:  #1CC766;

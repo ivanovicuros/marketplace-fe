@@ -8,8 +8,14 @@ export const ProfileWrapper = styled.div`
     h1{
         margin: 0;
     }
-    .hide{
-        display: none;
+
+    .close-area{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `
 
@@ -45,5 +51,6 @@ export const EditBox = styled.div`
     position: absolute;
     width: 100%;
     height: 100vh;
+    
     background-color: rgba(0, 0, 0, 0.2);
 `

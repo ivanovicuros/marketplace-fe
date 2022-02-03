@@ -23,7 +23,7 @@ const Profile = () => {
     }
 
     const togglePopup = (e) => {
-        if(!e.target.name){
+        if(e.target.className === 'close-area'){
             toggleEdit();
         }
     }
@@ -51,9 +51,13 @@ const Profile = () => {
                     <button onClick={toggleEdit}>Edit</button>
                 </>}                
             </ProfileCard>
-            <EditBox onMouseDown={togglePopup} className={`${!editing && 'hide'}`}>
-                <EditProfile toggleEdit={toggleEdit} handleEdit={handleEdit} id={id}/>
-            </EditBox>
+            {editing && 
+                <EditBox onMouseDown={togglePopup}>
+                    <div className='close-area'>
+                        <EditProfile toggleEdit={toggleEdit} handleEdit={handleEdit} id={id}/>
+                    </div>
+                </EditBox>
+            }
         </ProfileWrapper>
     )
 

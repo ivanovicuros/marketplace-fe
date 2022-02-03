@@ -8,10 +8,6 @@ export const HamburgerWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
 
-    .hide{
-        display: none;
-    }
-
     .close-area{
         width: 70%;
         height: 100vh;
