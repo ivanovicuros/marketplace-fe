@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from '../styles/Form';
-import { Popup } from '../styles/Profile';
 import styled from 'styled-components';
 import axios from 'axios';
 
