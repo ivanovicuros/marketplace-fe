@@ -54,7 +54,12 @@ export const StyledButton = styled.button`
     padding: 0 20px;
     cursor: pointer;
     box-sizing: border-box;
+
+    &:hover {
+        opacity: 0.5;
+    }
 `
+
 
 export const StyledImage = styled.img`
     max-height: 30vh;
