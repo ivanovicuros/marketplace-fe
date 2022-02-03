@@ -46,13 +46,14 @@ const ItemForm = (props) => {
             let itemToSend = {
                 name: item.name,
                 image: image,
-                price: item.price,
+                price: item.price.toString(),
                 description: item.description
             }
             axiosWithAuth().post(`https://marketplace-be-02.herokuapp.com/api/items/additem/${localStorage.getItem('id')}`, itemToSend)
             .then(resp => {
                 console.log(resp);
             }).catch(err => console.error(err));
+            console.log(itemToSend);
         }else{
             setError('Please fill out all fields');
         }

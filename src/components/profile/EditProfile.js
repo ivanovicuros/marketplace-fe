@@ -29,6 +29,7 @@ const EditProfile = (props) => {
     const { handleEdit, toggleEdit } = props;
 
     const [editUser, setEditUser] = useState(initialState);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         axios.get(`https://marketplace-be-02.herokuapp.com/api/users/${localStorage.getItem('id')}`)
@@ -46,7 +47,20 @@ const EditProfile = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleEdit(editUser);
+        const userToSend = {
+            name: editUser.name,
+            username: editUser.username,
+            password: editUser.password,
+            location: editUser.location
+        }
+
+        if( userToSend.name && userToSend.username && userToSend.password && userToSend.location){
+            handleEdit(userToSend);
+            setError('');
+        }else{
+            setError('Please fill out all fields');
+        }
+        
     }
 
     return(
@@ -85,6 +99,7 @@ const EditProfile = (props) => {
                         onChange={handleChange}
                         />
                     </label>
+                    {error && <p>{error}</p>}
                     <FormButtons>
                         <StyledButton type='submit'>Save</StyledButton>
                         <StyledButton type='button'  onClick={toggleEdit} id='cancel'>Cancel</StyledButton>

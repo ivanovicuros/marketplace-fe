@@ -12,8 +12,9 @@ export const ProfileWrapper = styled.div`
     .close-area{
         position: fixed;
         width: 100%;
-        height: 100vh;
+        height: 125vh;
         display: flex;
+        border: 10px solid blue;
         justify-content: center;
         align-items: center;
     }
@@ -29,6 +30,7 @@ export const ProfileCard = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid magenta;
 
     h1{
         font-size: 5rem;
@@ -51,9 +53,11 @@ export const ProfileCard = styled.div`
 export const EditBox = styled.div`
     position: absolute;
     width: 100%;
-    height: 100vh;
-    
+    height: 200vh;
+    display: flex;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid red;
 `
 
 export const ItemListWrapper = styled.div`

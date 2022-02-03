@@ -35,7 +35,7 @@ const Profile = () => {
     }
 
     const handleEdit = (user) => {
-        axiosWithAuth().put(`https://marketplace-be-02.herokuapp.com/api/users/${localStorage.getItem('id')}`)
+        axiosWithAuth().put(`https://marketplace-be-02.herokuapp.com/api/users/${localStorage.getItem('id')}`, user)
             .then(res => {
                 setUser({
                     ...user,
@@ -50,33 +50,35 @@ const Profile = () => {
     }
 
     return(
-        <ProfileWrapper>
-            <GlobalStyle />
-            <ProfileCard>
-                <Section>
-                    {user && <>
-                        <h1>{user.name}</h1>
-                        <h1>{user.username}</h1>
-                        <h4>{user.location}</h4>
-                        <button onClick={toggleEdit}>Edit</button>
-                    </>}
-                </Section>
-                <Section>
-                    <ItemListWrapper>
-                        <h2>Items:</h2>
-                        {items.length > 0 ? <ItemList items={items} /> : <h2>You have no items listed</h2>}
-                        <button onClick={addItem}>Add Item</button>
-                    </ItemListWrapper>
-                </Section>
-            </ProfileCard>
-            {editing && 
-                <EditBox onMouseDown={togglePopup}>
-                    <div className='close-area'>
-                        <EditProfile toggleEdit={toggleEdit} handleEdit={handleEdit} />
-                    </div>
-                </EditBox>
-            }
-        </ProfileWrapper>
+        <>
+            <ProfileWrapper>
+                <GlobalStyle />
+                <ProfileCard>
+                    <Section>
+                        {user && <>
+                            <h1>{user.name}</h1>
+                            <h1>{user.username}</h1>
+                            <h4>{user.location}</h4>
+                            <button onClick={toggleEdit}>Edit</button>
+                        </>}
+                    </Section>
+                    <Section>
+                        <ItemListWrapper>
+                            <h2>Items:</h2>
+                            {items.length > 0 ? <ItemList items={items} marketplace={false}/> : <h2>You have no items listed</h2>}
+                            <button onClick={addItem}>Add Item</button>
+                        </ItemListWrapper>
+                    </Section>
+                </ProfileCard>
+                {editing && 
+                    <EditBox onMouseDown={togglePopup}>
+                        <div className='close-area'>
+                            <EditProfile toggleEdit={toggleEdit} handleEdit={handleEdit} />
+                        </div>
+                    </EditBox>
+                }
+            </ProfileWrapper>
+        </>
     )
 
 }
