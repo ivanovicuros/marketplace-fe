@@ -15,12 +15,21 @@ const StyledWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+`
 
-
+const StyledInput = styled.input`
+    width: 20%;
+    margin-left:40%;
+    position: fixed;
+    margin-top: 0.8vh;
+    height: 4vh;
+    text-align: center;
+    font-size: 2vh;
 `
 
 const Marketplace = () => {
     const [items, setItems] = useState([]);
+    const [searchInput, setSearchInput] = useState('');
 
     useEffect(() => {
         axiosWithAuth().get('/items')
@@ -35,12 +44,33 @@ const Marketplace = () => {
     }, [])
     console.log(items)
 
+    const handleChange = e => {
+        setSearchInput(e.target.value)
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        setItems(items => items.filter((item) => item.name.includes(searchInput)))
+
+    }
+
     return(
+        <>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <StyledInput
+                type='text'
+                placeholder="search"
+                onChange={handleChange}
+                />
+            </form>
+        </div>
         <StyledContainer>
             <StyledWrapper>
                 <ItemList items={items} marketplace={true}/>
             </StyledWrapper>
         </StyledContainer>
+        </>
     )
 }
 
