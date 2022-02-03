@@ -4,6 +4,7 @@ import { StyledFormWrapper, StyledForm, StyledInput, StyledButton } from './styl
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { errorMsg } from '../actions';
+import { useHistory } from 'react-router-dom';
 
 const Signup = (props) => {
     const [credentials, setCredentials] = useState({
@@ -12,6 +13,8 @@ const Signup = (props) => {
         password: '',
         location: ''
     })
+
+    const history = useHistory();
 
     const handleChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -24,6 +27,7 @@ const Signup = (props) => {
         else {axios.post('https://marketplace-be-02.herokuapp.com/api/auth/register', credentials)
         .then(resp => {
             console.log(resp)
+            history.push('/login', {registered:true})
         })
         .catch(err => {
             console.log(err)
