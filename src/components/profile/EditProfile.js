@@ -50,7 +50,7 @@ const EditProfile = (props) => {
 
     return(
         <>
-            <StyledFormWrapper>
+            <StyledFormWrapper edit>
                 <StyledForm onSubmit={handleSubmit}>
                     <label> Name:
                         <StyledInput

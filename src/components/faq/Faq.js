@@ -9,7 +9,7 @@ const Faq = (props) =>{
         <>
             <GlobalStyle />
             <TopContent>
-                <h1>Faq</h1>
+                <h1>FAQ</h1>
                 <p>Ad cillum veniam est ipsum est adipisicing. Duis culpa laboris fugiat aliqua ad anim adipisicing deserunt elit voluptate occaecat ullamco enim.</p>
             </TopContent>
             <MainContent>

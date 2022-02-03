@@ -41,19 +41,12 @@ export const StyledHeader = Styled.header`
   }
 
   i{
-    width: 50%;
     color: white;
     font-size: 2rem;
     text-align: right;
     padding-right: 2%;
     cursor: pointer;
   }
-`
-
-export const StyledNav = Styled.nav`
-  width: 50%;
-  display: flex;
-  justify-content: space-evenly;
 `
 
 export const StyledFooter = Styled.footer`
