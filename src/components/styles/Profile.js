@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ProfileWrapper = styled.div`
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,8 +12,9 @@ export const ProfileWrapper = styled.div`
     .close-area{
         position: fixed;
         width: 100%;
-        height: 100vh;
+        height: 125vh;
         display: flex;
+        border: 10px solid blue;
         justify-content: center;
         align-items: center;
     }
@@ -22,12 +23,14 @@ export const ProfileWrapper = styled.div`
 export const ProfileCard = styled.div`
     border-radius: 1.5em;
     background-color: white;
+    margin: 5% 0;
     width: 80%;
-    height: 80vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid magenta;
 
     h1{
         font-size: 5rem;
@@ -50,7 +53,30 @@ export const ProfileCard = styled.div`
 export const EditBox = styled.div`
     position: absolute;
     width: 100%;
-    height: 100vh;
-    
+    height: 200vh;
+    display: flex;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid red;
+`
+
+export const ItemListWrapper = styled.div`
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    h2{
+        width: 100%;
+    }
+`
+
+export const Section = styled.div`
+    padding: 4% 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `

@@ -27,7 +27,6 @@ const StyledApp = Styled.div`
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const useHamburger = localStorage.getItem('useHamburger');
 
   const handleHamburger = () => {
     setMenuOpen(!menuOpen);
@@ -46,7 +45,7 @@ function App() {
         <Switch>
           <ProtectedRoute path='/logout' component={Logout}/>
           <ProtectedRoute path='/item-form' component={ItemForm}/>
-          <Route path='/profile/:id' component={Profile} />
+          <Route path='/profile' component={Profile} />
           <Route path='/login' component={Login}/>
           <Route path='/signup' component={Signup}/>
           <Route path='/marketplace' component={Marketplace} />

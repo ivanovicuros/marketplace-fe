@@ -22,7 +22,7 @@ const HamburgerLinks = (props) => {
                 <StyledLinks>
                     <Link to='/login'>LOGIN</Link>
                     <Link to='/item-form'>ADD ITEM</Link>
-                    <Link to='/profile/1'>PROFILE</Link>
+                    <Link to='/profile'>PROFILE</Link>
                     <Link to='/marketplace'>MARKETPLACE</Link>
                     <Link to='/logout'>LOGOUT</Link>
                 </StyledLinks>

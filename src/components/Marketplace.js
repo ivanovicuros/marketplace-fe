@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "./utils/axiosWithAuth";
 import styled from "styled-components";
+import ItemList from './ItemList';
 
 const StyledContainer = styled.div`
 margin-top: 0;
@@ -17,19 +18,6 @@ const StyledWrapper = styled.div`
 
 
 `
-const StyledCard = styled.div`
-    
-    cursor: pointer;
-     
-`
-const StyledImg = styled.img`
-    width: 85%;
-    height: 85%;
-    margin: 15px;
-    border: 1px solid #555555;
-    border-radius: 5px;
-    box-sizing: border-box;
-`
 
 const Marketplace = () => {
     const [items, setItems] = useState([]);
@@ -38,7 +26,6 @@ const Marketplace = () => {
         axiosWithAuth().get('/items')
         .then(resp => {
             setItems([
-                ...items,
                 ...resp.data
             ])
         })
@@ -51,14 +38,7 @@ const Marketplace = () => {
     return(
         <StyledContainer>
             <StyledWrapper>
-                {items.map(item => (
-                    <StyledCard className="item-card" key={item.item_id}>
-                        <StyledImg src={item.image} />
-                        <p>{item.name}</p>
-                        <p>$: {item.price}</p>
-                        <p>{item.description}</p>
-                    </StyledCard>
-                ))}
+                <ItemList items={items} marketplace={true}/>
             </StyledWrapper>
         </StyledContainer>
     )
