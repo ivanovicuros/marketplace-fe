@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ProfileWrapper = styled.div`
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,8 +22,9 @@ export const ProfileWrapper = styled.div`
 export const ProfileCard = styled.div`
     border-radius: 1.5em;
     background-color: white;
+    margin: 5% 0;
     width: 80%;
-    height: 80vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,4 +54,25 @@ export const EditBox = styled.div`
     height: 100vh;
     
     background-color: rgba(0, 0, 0, 0.2);
+`
+
+export const ItemListWrapper = styled.div`
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    h2{
+        width: 100%;
+    }
+`
+
+export const Section = styled.div`
+    padding: 4% 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `

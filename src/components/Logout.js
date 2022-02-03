@@ -11,6 +11,7 @@ const Logout = () => {
         .post('/auth/logout', {})
         .then(resp => {
             localStorage.removeItem('token');
+            localStorage.removeItem('id');
             push('/')
         })
         .catch(err => {

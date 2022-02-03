@@ -25,12 +25,12 @@ const initialState = {
 
 const EditProfile = (props) => {
 
-    const { handleEdit, toggleEdit, id } = props;
+    const { handleEdit, toggleEdit } = props;
 
     const [editUser, setEditUser] = useState(initialState);
 
     useEffect(() => {
-        axios.get(`https://marketplace-be-02.herokuapp.com/api/users/${id}`)
+        axios.get(`https://marketplace-be-02.herokuapp.com/api/users/${localStorage.getItem('id')}`)
             .then(resp => {
                 setEditUser({...editUser, ...resp.data});
             }).catch(err => console.error(err));

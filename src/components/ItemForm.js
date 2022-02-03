@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton, StyledImage } from './styles/Form';
 import { GlobalStyle } from './styles/';
+import axios from 'axios';
 
 const ItemForm = (props) => {
     const [item, setItem] = useState({
@@ -10,6 +11,8 @@ const ItemForm = (props) => {
         price: 0,
         description: ''
     });
+
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         setItem({ ...item, [e.target.name]: e.target.value });
@@ -21,6 +24,7 @@ const ItemForm = (props) => {
         reader.onload = () => {
             if(reader.readyState === 2){
                 setItem({...item, fileURL: reader.result});
+                console.log(reader.result);
             }
         }
         if(files[0]['type'].split('/')[0] === 'image'){
@@ -32,6 +36,33 @@ const ItemForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let image = '';
+
+        if(item.fileUrl){
+            image = item.fileURL;
+        }else if(item.imageURL){
+            image = item.imageURL;
+        }
+        console.log(item.name);
+        console.log(item.imageURL);
+        console.log(image);
+
+        if(image && item.name && item.price && item.description){
+            let itemToSend = {
+                name: item.name,
+                image: image,
+                price: item.price,
+                description: item.description
+            }
+            // axios.post(`https://marketplace-be-02.herokuapp.com/api/items/additem/${localStorage.getItem('id')}`, itemToSend)
+            // .then(resp => {
+            //     console.log(resp);
+            // }).catch(err => console.error(err));
+            console.log(itemToSend);
+        }else{
+            setError('Please fill out all fields');
+        }
+        
         
     }
 
@@ -58,7 +89,7 @@ const ItemForm = (props) => {
                     <label>Description:
                         <StyledInput type="text" name="description" value={item.description} onChange={handleChange}/>
                     </label>
-
+                    {error && <p>{error}</p>}
                     <StyledButton>ADD ITEM</StyledButton>
                 </StyledForm>
             </StyledFormWrapper>

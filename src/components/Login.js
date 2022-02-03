@@ -31,7 +31,8 @@ const Login = (props) => {
         .then(resp => {
             console.log(resp)
             localStorage.setItem('token', resp.data.token);
-            history.push(`/profile/${resp.data.currentUser.id}`)
+            localStorage.setItem('id', resp.data.currentUser.id);
+            history.push(`/profile/${localStorage.getItem('id')}`)
         })
         .catch(err => {
             console.log(err)
