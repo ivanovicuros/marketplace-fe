@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyledFormWrapper, StyledForm, StyledInput, StyledButton, StyledImage } from './styles/Form';
 import { GlobalStyle } from './styles/';
-import axios from 'axios';
+import axiosWithAuth from './utils/axiosWithAuth';
 
 const ItemForm = (props) => {
     const [item, setItem] = useState({
@@ -24,7 +24,6 @@ const ItemForm = (props) => {
         reader.onload = () => {
             if(reader.readyState === 2){
                 setItem({...item, fileURL: reader.result});
-                console.log(reader.result);
             }
         }
         if(files[0]['type'].split('/')[0] === 'image'){
@@ -37,15 +36,11 @@ const ItemForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let image = '';
-
-        if(item.fileUrl){
+        if(!!item.fileURL){
             image = item.fileURL;
-        }else if(item.imageURL){
+        }else if(!!item.imageURL){
             image = item.imageURL;
         }
-        console.log(item.name);
-        console.log(item.imageURL);
-        console.log(image);
 
         if(image && item.name && item.price && item.description){
             let itemToSend = {
@@ -54,11 +49,10 @@ const ItemForm = (props) => {
                 price: item.price,
                 description: item.description
             }
-            // axios.post(`https://marketplace-be-02.herokuapp.com/api/items/additem/${localStorage.getItem('id')}`, itemToSend)
-            // .then(resp => {
-            //     console.log(resp);
-            // }).catch(err => console.error(err));
-            console.log(itemToSend);
+            axiosWithAuth().post(`https://marketplace-be-02.herokuapp.com/api/items/additem/${localStorage.getItem('id')}`, itemToSend)
+            .then(resp => {
+                console.log(resp);
+            }).catch(err => console.error(err));
         }else{
             setError('Please fill out all fields');
         }

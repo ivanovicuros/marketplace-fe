@@ -32,7 +32,7 @@ const Login = (props) => {
             console.log(resp)
             localStorage.setItem('token', resp.data.token);
             localStorage.setItem('id', resp.data.currentUser.id);
-            history.push(`/profile/${localStorage.getItem('id')}`)
+            history.push(`/profile`)
         })
         .catch(err => {
             console.log(err)

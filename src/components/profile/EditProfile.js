@@ -19,8 +19,9 @@ const FormButtons = styled.div`
 const initialState = {
     name:'',
     username:'',
+    location: '',
     password: '',
-    location: ''
+    
 }
 
 const EditProfile = (props) => {

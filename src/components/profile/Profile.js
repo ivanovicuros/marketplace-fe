@@ -4,7 +4,7 @@ import { GlobalStyle } from '../styles';
 import { ProfileWrapper, ProfileCard, EditBox, ItemListWrapper, Section } from '../styles/Profile';
 import EditProfile from './EditProfile';
 import ItemList from '../ItemList';
-import axios from "axios";
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 const Profile = () => {
 
@@ -14,14 +14,13 @@ const Profile = () => {
     const { push } = useHistory();
 
     useEffect(() => {
-        axios.get(`https://marketplace-be-02.herokuapp.com/api/users/${localStorage.getItem('id')}`)
+        axiosWithAuth().get(`https://marketplace-be-02.herokuapp.com/api/users/${localStorage.getItem('id')}`)
             .then(res => {
                 setUser(res.data);
             }).catch(err => console.error(err));
-        axios.get(`https://marketplace-be-02.herokuapp.com/api/items/${localStorage.getItem('id')}`)
+        axiosWithAuth().get(`https://marketplace-be-02.herokuapp.com/api/items/${localStorage.getItem('id')}`)
             .then(res => {
                 setItems(res.data);
-                console.log(res.data);
             }).catch(err => console.error(err));
     }, [])
 
@@ -36,13 +35,12 @@ const Profile = () => {
     }
 
     const handleEdit = (user) => {
-        axios.put(`https://marketplace-be-02.herokuapp.com/api/users/${localStorage.getItem('id')}`)
+        axiosWithAuth().put(`https://marketplace-be-02.herokuapp.com/api/users/${localStorage.getItem('id')}`)
             .then(res => {
                 setUser({
                     ...user,
                     ...res.data
                 })
-                console.log(res.data);
                 setEditing(false);
             }).catch(err => console.error(err));
     }
