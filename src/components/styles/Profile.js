@@ -30,7 +30,6 @@ export const ProfileCard = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid magenta;
 
     h1{
         font-size: 5rem;
@@ -57,7 +56,6 @@ export const EditBox = styled.div`
     display: flex;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid red;
 `
 
 export const ItemListWrapper = styled.div`
