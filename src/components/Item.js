@@ -7,8 +7,8 @@ const StyledCard = styled.div`
     margin: 1.5%;
 `
 const StyledImg = styled.img`
-    width: ${props => props.marketplace ? '85%' : '50%'};
-    height: ${props => props.marketplace ? '85%' : '50%'};
+    width: 20em;
+    height: 15em;
     border-radius: 5px;
     box-sizing: border-box;
 `

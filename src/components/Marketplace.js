@@ -42,7 +42,6 @@ const Marketplace = () => {
             console.log({err})
         })
     }, [])
-    console.log(items)
 
     const handleChange = e => {
         setSearchInput(e.target.value)
