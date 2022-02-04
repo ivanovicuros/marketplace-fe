@@ -43,9 +43,9 @@ function App() {
         </StyledHeader>
         {menuOpen && <HamburgerLinks handleHamburger={handleHamburger} />}
         <Switch>
-          <ProtectedRoute path='/logout' component={Logout}/>
+          <ProtectedRoute path='/logout' component={() => <Logout handleHamburger={handleHamburger} />}/>
           <ProtectedRoute path='/item-form' component={ItemForm}/>
-          <Route path='/profile' component={Profile} />
+          <ProtectedRoute path='/profile' component={Profile} />
           <Route path='/login' component={Login}/>
           <Route path='/signup' component={Signup}/>
           <Route path='/marketplace' component={Marketplace} />
