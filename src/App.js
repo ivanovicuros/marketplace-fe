@@ -44,6 +44,7 @@ function App() {
         {menuOpen && <HamburgerLinks handleHamburger={handleHamburger} />}
         <Switch>
           <ProtectedRoute path='/logout' component={() => <Logout handleHamburger={handleHamburger} />}/>
+          <ProtectedRoute path='/item-form/:id' component={ItemForm}/>
           <ProtectedRoute path='/item-form' component={ItemForm}/>
           <ProtectedRoute path='/profile' component={Profile} />
           <Route path='/login' component={Login}/>
