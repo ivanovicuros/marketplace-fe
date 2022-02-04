@@ -34,7 +34,6 @@ const Item = (props) => {
     const { push } = useHistory();
 
    const handleDelete = () => {
-       console.log('click')
        axiosWithAuth().delete(`/items/deleteitem/${item.item_id}`)
        .then(resp => {
            setItems(resp.data)
