@@ -6,6 +6,7 @@ import EditProfile from './EditProfile';
 import ItemList from '../ItemList';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
+
 const Profile = () => {
 
     const [user, setUser] = useState(null);
@@ -48,6 +49,7 @@ const Profile = () => {
     const addItem = () => {
         push('/item-form');
     }
+
 
     return(
         <>
