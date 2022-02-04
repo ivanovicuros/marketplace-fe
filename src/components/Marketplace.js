@@ -52,7 +52,7 @@ const Marketplace = () => {
         setItems(items => items.filter((item) => item.name.includes(searchInput)))
 
     }
-    console.log(items)
+
     return(
         <>
         <div>
@@ -66,7 +66,7 @@ const Marketplace = () => {
         </div>
         <StyledContainer>
             <StyledWrapper>
-                <ItemList items={items} marketplace={true} setItems={setItems}/>
+                <ItemList items={items} marketplace={true} />
             </StyledWrapper>
         </StyledContainer>
         </>

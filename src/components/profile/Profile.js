@@ -51,6 +51,7 @@ const Profile = () => {
     }
 
 
+
     return(
         <>
             <ProfileWrapper>
@@ -67,8 +68,9 @@ const Profile = () => {
                     <Section>
                         <ItemListWrapper>
                             <h2>Items:</h2>
-                            {items.length > 0 ? <ItemList items={items} marketplace={false}/> : <h2>You have no items listed</h2>}
+                            {items.length > 0 ? <ItemList items={items} marketplace={false} setItems={setItems}/> : <h2>You have no items listed</h2>}
                             <button onClick={addItem}>Add Item</button>
+            
                         </ItemListWrapper>
                     </Section>
                 </ProfileCard>
