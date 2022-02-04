@@ -6,7 +6,7 @@ African Marketplace is a platform that helps small business owners to improve th
 
 ## Requirements
 
-For development you will need 
+For development you will need to:
 
 ### Install
 
