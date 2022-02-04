@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axiosWithAuth from './utils/axiosWithAuth';
 
 
 const StyledCard = styled.div`
@@ -15,17 +16,25 @@ const StyledImg = styled.img`
 `
 
 const Item = (props) => {
-    const { item, marketplace } = props;
+    const { item, marketplace, setItems } = props;
 
-    
-
+   const handleDelete = () => {
+       console.log('click')
+       axiosWithAuth().delete(`/items/deleteitem/${item.item_id}`)
+       .then(resp => {
+           setItems(resp.data)
+       })
+       .catch(err => console.log(err))
+   }
 
     return(
         <StyledCard className="item-card">
-            <StyledImg src={item.image} marketplace={marketplace}/>
+            <StyledImg src={item.image} alt={item.name} />
             <p>{item.name}</p>
             <p>${item.price}</p>
             <p>{item.description}</p>
+            {!marketplace && <button onClick={handleDelete}>Delete</button>}
+
         </StyledCard>
     )
 }

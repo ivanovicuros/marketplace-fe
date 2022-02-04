@@ -7,7 +7,7 @@ const ItemList = (props) => {
     return(
         <>
             {items.map((item, ind) => (
-                <Item key={ind} item={item} marketplace={marketplace} setItems={setItems}/>
+                <Item key={ind} item={item} marketplace={marketplace} setItems={setItems} />
             ))}
         </>
     )
