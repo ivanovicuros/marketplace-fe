@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import {StyledButton }from '../components/styles/Form'
+import axiosWithAuth from './utils/axiosWithAuth';
 
 const StyledCard = styled.div`
     text-transform: capitalize;
@@ -14,7 +16,15 @@ const StyledImg = styled.img`
 `
 
 const Item = (props) => {
-    const { item, marketplace } = props;
+    const { item, marketplace, setItems } = props;
+
+    const handleDelete = () => {
+        axiosWithAuth().delete(`items/deleteitem/${item.item_id}`).then(resp => {
+            setItems(resp.data)
+            
+        }).catch(err => console.log(err))
+    }
+
 
     return(
         <StyledCard className="item-card">
@@ -22,6 +32,7 @@ const Item = (props) => {
             <p>{item.name}</p>
             <p>${item.price}</p>
             <p>{item.description}</p>
+            <StyledButton onClick={handleDelete}>Delete Item</StyledButton>
         </StyledCard>
     )
 }
