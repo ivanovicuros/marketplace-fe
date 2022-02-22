@@ -12,9 +12,8 @@ export const ProfileWrapper = styled.div`
     .close-area{
         position: fixed;
         width: 100%;
-        height: 125vh;
+        height: 200vh;
         display: flex;
-        border: 10px solid blue;
         justify-content: center;
         align-items: center;
     }
