@@ -2,8 +2,8 @@
 
 African Marketplace is a platform that helps small business owners to improve their business and economic opportunities to grow out of poverty.
 
-[Back-End Repo](https://github.com/Build-Week-African-Marketplace-3/marketplace-be)
-[Deploy]()
+[Back-End Repo](https://github.com/Build-Week-African-Marketplace-3/marketplace-be)\
+[Deploy](https://marketplace-fe-iota.vercel.app/)
 
 ## Requirements
 
