@@ -49,8 +49,7 @@ const Marketplace = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        setItems(items => items.filter((item) => item.name.includes(searchInput)))
-
+        setItems(items.filter(item => item.name.includes(searchInput)))
     }
 
     return(
